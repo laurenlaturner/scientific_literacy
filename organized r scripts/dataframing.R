@@ -61,12 +61,13 @@ df.std$delta_test <- df.std$`post TOSLS score` - df.std$`pre TOSLS score`
 # Calculate delta of percentages
 df.std$delta_test_percent <- df.std$delta_test/28
 
-# Calculate percentages of scores (absolute values, out of 28)
-df.std$perc_test <- df.std$`post TOSLS score`/28
+# Calculate percentages of post scores (absolute values, out of 28)
+df.std$perc_test_post <- df.std$`post TOSLS score`/28
+df.std$perc_test_pre <- df.std$`pre TOSLS score`/28
 
 # Convert 0's and 1's to be slightly shifted
-df.std$perc_test[df.std$perc_test == 0] <- 0.0005
-df.std$perc_test[df.std$perc_test == 1] <- 0.9995
+df.std$perc_test_post[df.std$perc_test == 0] <- 0.0005
+df.std$perc_test_post[df.std$perc_test == 1] <- 0.9995
 
 ## -- Effect Size --
 cohen.d(df$`post TOSLS score`, df$`pre TOSLS score`, paired = TRUE, na.rm = TRUE)
