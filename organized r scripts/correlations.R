@@ -260,4 +260,4 @@ ggplot(avg_df, aes(x = Test, y = Percentage, fill = Test)) +
 
 diff_avg <- avg_post - avg_pre
 question_diff <- diff_avg*28
-question_diff 
+question_diff
